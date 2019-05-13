@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment"
+    android:layout_marginTop="24dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Pesquisar"
+                android:layout_marginBottom="32dp"
+                android:padding="10sp"
+                android:layout_centerHorizontal="true"
+                android:drawableLeft="@drawable/ic_search"
+                android:background="@drawable/bg_search"
+                android:layout_marginHorizontal="30dp"
+                />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/list_briefings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="10.0sp"
+            android:padding="16dp"
+            />
+    </LinearLayout>
+
+</RelativeLayout>
