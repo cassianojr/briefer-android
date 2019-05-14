@@ -4,6 +4,8 @@ import java.util.List;
 
 public class Briefing {
 
+
+    private int id;
     private String cl_name;
     private String cl_phone;
     private String cl_email;
@@ -17,6 +19,19 @@ public class Briefing {
     private String social_media;
     private String outline;
     private String objective;
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public User getCreatedBy() {
+        return createdBy;
+    }
 
     public void setCreatedBy(User createdBy) {
         this.createdBy = createdBy;
