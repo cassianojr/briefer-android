@@ -7,7 +7,7 @@
     <string name="prompt_password">Senha</string>
     <string name="prompt_confirm_password">Confirmar senha</string>
 
-    <string name="action_sign_in">Entar</string>
+    <string name="action_sign_in">Entrar</string>
     <string name="action_sign_up">Cadastre-se</string>
     <string name="action_sign_in_short">Entar</string>
     <string name="error_invalid_email">Esse e-mail é inválido</string>
@@ -24,6 +24,21 @@
     <string name="title_profile">Perfil</string>
     <string name="prompt_nb_proj_title">Titulo do Projeto</string>
     <string name="action_new_briefing">Criar novo Briefing</string>
+    <string name="prompt_nb_cl_name">Nome do Cliente</string>
+    <string name="prompt_nb_cl_phone">Telefone do Cliente</string>
+    <string name="prompt_nb_cl_email">Email do Cliente</string>
+    <string name="prompt_nb_examples">Sites/Apps de exemplo ou semelhantes</string>
+    <string name="prompt_nb_num_pages">Número de Páginas/Telas do site/app</string>
+    <string name="prompt_nb_social">Mídias Sociais do projeto</string>
+    <string name="prompt_nb_outline">Por que criar esse projeto? Quais são as suas necessidades?</string>
+    <string name="prompt_nb_objective">Qual o objetivo do projeto?</string>
+    <string name="prompt_nb_description">Descreva o projeto detalhadamente</string>
+    <string name="prompt_nb_features">Quais são as características do projeto?</string>
+    <string name="prompt_nb_has_visual">Possui identidade visual.</string>
+    <string name="prompt_nb_has_logo">Possui uma logo definida.</string>
+    <string name="prompt_nb_has_current">Já possui um site para fazer redesign/manutenção.</string>
+    <string name="prompt_nb_time_goal">Qual o prazo final para o projeto?</string>
+    <string name="prompt_nb_cost">Custo</string>
 
 
 </resources>
