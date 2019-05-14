@@ -44,7 +44,7 @@ public class HomeFragment extends Fragment {
         List<Briefing> briefings = new ArrayList<Briefing>();
 
         Briefing staticBriefing = new Briefing();
-        staticBriefing.setProj_title("A static briefing");
+        staticBriefing.setProjTitle("A static briefing");
         staticBriefing.setDescription("This is a static briefing just for test of the interface, this will be replaced soon by the dynamic briefings comming from the Retrofit and webservice!");
 
         Budget budget = new Budget();

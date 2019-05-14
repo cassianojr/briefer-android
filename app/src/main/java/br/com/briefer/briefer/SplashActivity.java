@@ -17,7 +17,9 @@ public class SplashActivity extends AppCompatActivity {
         //Do all the startup verifications before start the activity
 
         //start activity
-        Intent loginIntent = new Intent(getApplicationContext(), MenuActivity.class);
+        Intent loginIntent = new Intent(getApplicationContext(), LoginActivity.class);
         startActivity(loginIntent);
+
+        finish();
     }
 }

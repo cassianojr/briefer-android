@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".NewBriefingFragment"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
-    android:layout_marginBottom="64dp"
-    >
     <ScrollView
-        android:id="@+id/login_form"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context=".NewBriefingFragment"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:orientation="vertical"
+        android:layout_marginBottom="48dp"
+
+        android:id="@+id/login_form">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,210 +22,181 @@
             <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Criar novo Briefing"
+            android:text="@string/title_new_briefing"
             android:textSize="24sp"
             android:layout_gravity="center"/>
 
             <!--TextViews for the form-->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <AutoCompleteTextView
-                    android:id="@+id/new_briefing_proj_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/prompt_nb_proj_title"
-                    android:maxLines="1"
-                    android:singleLine="true" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <AutoCompleteTextView
-                    android:id="@+id/new_briefing_cl_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Nome do Cliente"
-                    android:maxLines="1"
-                    android:singleLine="true" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <AutoCompleteTextView
-                    android:id="@+id/new_briefing_cl_phone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Telefone do Cliente"
-                    android:maxLines="1"
-                    android:singleLine="true" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <AutoCompleteTextView
-                    android:id="@+id/new_briefing_cl_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Email do Cliente"
-                    android:inputType="textEmailAddress"
-                    android:maxLines="1"
-                    android:singleLine="true" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <AutoCompleteTextView
-                    android:id="@+id/new_briefing_examples"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Sites/Apps de exemplo ou semelhantes"
-                    android:maxLines="1"
-                    android:singleLine="true" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <AutoCompleteTextView
-                    android:id="@+id/new_briefing_num_pages"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Número de Páginas/Telas do site/app"
-                    android:maxLines="1"
-                    android:singleLine="true" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <AutoCompleteTextView
-                    android:id="@+id/new_briefing_social_media"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Mídias Sociais do projeto"
-                    android:maxLines="1"
-                    android:singleLine="true" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <AutoCompleteTextView
-                    android:id="@+id/new_briefing_outline"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Por que criar esse projeto? Quais são as suas necessidades?"
-                    android:maxLines="1"
-                    android:singleLine="true" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <AutoCompleteTextView
-                    android:id="@+id/new_briefing_objective"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Qual o objetivo do projeto?"
-                    android:maxLines="1"
-                    android:singleLine="true" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <AutoCompleteTextView
-                    android:id="@+id/new_briefing_description"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Descreva o projeto detalhadamente"
-                    android:maxLines="4"
-                    android:minLines="4"
-                    android:singleLine="false" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!--TODO tags input-->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <AutoCompleteTextView
-                    android:id="@+id/new_briefing_features"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Quais são as características do projeto?"
-                    android:maxLines="1"
-                    android:singleLine="true" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <CheckBox
+            <EditText
+                android:id="@+id/new_briefing_proj_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Possui identidade visual."/>
+                android:hint="@string/prompt_nb_proj_title"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:autofillHints="@string/prompt_nb_proj_title"
+                android:inputType="text"
+                tools:ignore="UnusedAttribute" />
 
-            <CheckBox
+            <EditText
+                android:id="@+id/new_briefing_cl_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Possui uma logo definida."/>
+                android:hint="@string/prompt_nb_cl_name"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:autofillHints="@string/prompt_nb_cl_name"
+                tools:ignore="UnusedAttribute"
+                android:inputType="text" />
 
-            <CheckBox
+            <EditText
+                android:id="@+id/new_briefing_cl_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Já possui um site para fazer redesign/manutenção."/>
+                android:hint="@string/prompt_nb_cl_phone"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:autofillHints="@string/prompt_nb_cl_phone"
+                tools:ignore="UnusedAttribute"
+                android:inputType="phone" />
+
+            <EditText
+                android:id="@+id/new_briefing_cl_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_nb_cl_email"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:autofillHints="@string/prompt_nb_cl_email"
+                tools:ignore="UnusedAttribute" />
+
+            <EditText
+                android:id="@+id/new_briefing_examples"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_nb_examples"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:autofillHints="@string/prompt_nb_examples"
+                android:inputType="text"
+                tools:ignore="UnusedAttribute" />
+
+
+            <EditText
+                android:id="@+id/new_briefing_num_pages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_nb_num_pages"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:autofillHints="@string/prompt_nb_num_pages"
+                tools:ignore="UnusedAttribute"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/new_briefing_social_media"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_nb_social"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:autofillHints="@string/prompt_nb_social"
+                tools:ignore="UnusedAttribute"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/new_briefing_outline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_nb_outline"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:autofillHints="@string/prompt_nb_outline"
+                tools:ignore="UnusedAttribute"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/new_briefing_objective"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_nb_objective"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:autofillHints="@string/prompt_nb_objective"
+                tools:ignore="UnusedAttribute"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/new_briefing_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_nb_description"
+                android:maxLines="4"
+                android:minLines="4"
+                android:singleLine="false"
+                android:autofillHints="@string/prompt_nb_description"
+                tools:ignore="UnusedAttribute"
+                android:inputType="text" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/new_briefing_tag_features"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.chip.ChipGroup>
+            <EditText
+                android:id="@+id/new_briefing_features"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_nb_features"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:autofillHints="@string/prompt_nb_features"
+                tools:ignore="UnusedAttribute"
+                android:inputType="text" />
+
+            <CheckBox
+                android:id="@+id/new_briefing_has_visual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/prompt_nb_has_visual"/>
+
+            <CheckBox
+                android:id="@+id/new_briefing_has_logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/prompt_nb_has_logo"/>
+
+            <CheckBox
+                android:id="@+id/new_briefing_has_current"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/prompt_nb_has_current"/>
 
             <EditText
                 android:id="@+id/new_briefing_time_goal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Qual o prazo final para o projeto?"
-                android:clickable="true"
+                android:hint="@string/prompt_nb_time_goal"
                 android:inputType="none"
                 android:focusable="false"
-                />
+                android:autofillHints="@string/prompt_nb_time_goal"
+                tools:ignore="UnusedAttribute" />
 
-
-            <com.google.android.material.textfield.TextInputLayout
+            <EditText
+                android:id="@+id/new_briefing_cost"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <AutoCompleteTextView
-                    android:id="@+id/new_briefing_cost"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Custo"
-                    android:maxLines="1"
-                    android:singleLine="true" />
-
-            </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_nb_cost"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:autofillHints="@string/prompt_nb_cost"
+                android:inputType="numberDecimal"
+                tools:ignore="UnusedAttribute" />
 
             <Button
-                android:id="@+id/email_sign_in_button"
+                android:id="@+id/new_briefing_button"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -239,4 +208,3 @@
 
         </LinearLayout>
     </ScrollView>
-</LinearLayout>

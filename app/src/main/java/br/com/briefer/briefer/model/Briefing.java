@@ -6,27 +6,43 @@ public class Briefing {
 
 
     private int id;
-    private String cl_name;
-    private String cl_phone;
-    private String cl_email;
+    private String clName;
+    private String clPhone;
+    private String clEmail;
     private String examples;
-    private int num_pages;
-    private boolean has_visual;
-    private boolean has_logo;
-    private boolean has_current;
+    private int numPages;
+    private boolean hasVisual;
+    private boolean hasLogo;
+    private boolean hasCurrent;
     private String description;
-    private String proj_title;
-    private String social_media;
+    private String projTitle;
+    private String socialMedia;
     private String outline;
     private String objective;
 
+    private User createdBy;
+    private List<String> features;
+    private Budget budget;
 
-    public int getId() {
-        return id;
+    public Briefing(){
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Briefing(String clName, String clPhone, String clEmail, String examples, int numPages, boolean hasVisual, boolean hasLogo, boolean hasCurrent, String description, String projTitle, String socialMedia, String outline, String objective, List<String> features, Budget budget) {
+        this.clName = clName;
+        this.clPhone = clPhone;
+        this.clEmail = clEmail;
+        this.examples = examples;
+        this.numPages = numPages;
+        this.hasVisual = hasVisual;
+        this.hasLogo = hasLogo;
+        this.hasCurrent = hasCurrent;
+        this.description = description;
+        this.projTitle = projTitle;
+        this.socialMedia = socialMedia;
+        this.outline = outline;
+        this.objective = objective;
+        this.features = features;
+        this.budget = budget;
     }
 
     public User getCreatedBy() {
@@ -37,41 +53,36 @@ public class Briefing {
         this.createdBy = createdBy;
     }
 
-    private User createdBy;
-    private List<String> features;
-    private Budget budget;
-
-
-    public Budget getBudget() {
-        return budget;
+    public int getId() {
+        return id;
     }
 
-    public void setBudget(Budget budget) {
-        this.budget = budget;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getCl_name() {
-        return cl_name;
+    public String getClName() {
+        return clName;
     }
 
-    public void setCl_name(String cl_name) {
-        this.cl_name = cl_name;
+    public void setClName(String clName) {
+        this.clName = clName;
     }
 
-    public String getCl_phone() {
-        return cl_phone;
+    public String getClPhone() {
+        return clPhone;
     }
 
-    public void setCl_phone(String cl_phone) {
-        this.cl_phone = cl_phone;
+    public void setClPhone(String clPhone) {
+        this.clPhone = clPhone;
     }
 
-    public String getCl_email() {
-        return cl_email;
+    public String getClEmail() {
+        return clEmail;
     }
 
-    public void setCl_email(String cl_email) {
-        this.cl_email = cl_email;
+    public void setClEmail(String clEmail) {
+        this.clEmail = clEmail;
     }
 
     public String getExamples() {
@@ -82,36 +93,36 @@ public class Briefing {
         this.examples = examples;
     }
 
-    public int getNum_pages() {
-        return num_pages;
+    public int getNumPages() {
+        return numPages;
     }
 
-    public void setNum_pages(int num_pages) {
-        this.num_pages = num_pages;
+    public void setNumPages(int numPages) {
+        this.numPages = numPages;
     }
 
-    public boolean isHas_visual() {
-        return has_visual;
+    public boolean isHasVisual() {
+        return hasVisual;
     }
 
-    public void setHas_visual(boolean has_visual) {
-        this.has_visual = has_visual;
+    public void setHasVisual(boolean hasVisual) {
+        this.hasVisual = hasVisual;
     }
 
-    public boolean isHas_logo() {
-        return has_logo;
+    public boolean isHasLogo() {
+        return hasLogo;
     }
 
-    public void setHas_logo(boolean has_logo) {
-        this.has_logo = has_logo;
+    public void setHasLogo(boolean hasLogo) {
+        this.hasLogo = hasLogo;
     }
 
-    public boolean isHas_current() {
-        return has_current;
+    public boolean isHasCurrent() {
+        return hasCurrent;
     }
 
-    public void setHas_current(boolean has_current) {
-        this.has_current = has_current;
+    public void setHasCurrent(boolean hasCurrent) {
+        this.hasCurrent = hasCurrent;
     }
 
     public String getDescription() {
@@ -122,20 +133,20 @@ public class Briefing {
         this.description = description;
     }
 
-    public String getProj_title() {
-        return proj_title;
+    public String getProjTitle() {
+        return projTitle;
     }
 
-    public void setProj_title(String proj_title) {
-        this.proj_title = proj_title;
+    public void setProjTitle(String projTitle) {
+        this.projTitle = projTitle;
     }
 
-    public String getSocial_media() {
-        return social_media;
+    public String getSocialMedia() {
+        return socialMedia;
     }
 
-    public void setSocial_media(String social_media) {
-        this.social_media = social_media;
+    public void setSocialMedia(String socialMedia) {
+        this.socialMedia = socialMedia;
     }
 
     public String getOutline() {
@@ -160,5 +171,13 @@ public class Briefing {
 
     public void setFeatures(List<String> features) {
         this.features = features;
+    }
+
+    public Budget getBudget() {
+        return budget;
+    }
+
+    public void setBudget(Budget budget) {
+        this.budget = budget;
     }
 }

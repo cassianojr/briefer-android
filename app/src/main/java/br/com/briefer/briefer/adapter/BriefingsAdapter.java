@@ -50,7 +50,7 @@ public class BriefingsAdapter extends BaseAdapter{
         }
 
         TextView mBriefingTitle = view.findViewById(R.id.list_briefing_title);
-        mBriefingTitle.setText(briefing.getProj_title());
+        mBriefingTitle.setText(briefing.getProjTitle());
 
         TextView mTimeGoal = view.findViewById(R.id.list_briefing_time_goal);
 
