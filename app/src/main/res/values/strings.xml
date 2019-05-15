@@ -39,6 +39,9 @@
     <string name="prompt_nb_has_current">Já possui um site para fazer redesign/manutenção.</string>
     <string name="prompt_nb_time_goal">Qual o prazo final para o projeto?</string>
     <string name="prompt_nb_cost">Custo</string>
+    <string name="prompt_su_name">Nome</string>
+    <string name="label_sign_up">Cadastre-se Gratuitamente</string>
+    <string name="briefer_logo_description">Briefer Logo</string>
 
 
 </resources>
