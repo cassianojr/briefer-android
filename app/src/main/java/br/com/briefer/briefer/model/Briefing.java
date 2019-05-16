@@ -1,9 +1,12 @@
 package br.com.briefer.briefer.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
 import java.util.List;
 
-public class Briefing {
-
+public class Briefing implements Serializable {
 
     private int id;
     private String clName;
@@ -27,6 +30,24 @@ public class Briefing {
     public Briefing(){
     }
 
+    /**
+     *
+     * @param clName client name
+     * @param clPhone phone of client
+     * @param clEmail email of client
+     * @param examples examples of projects
+     * @param numPages number of pages
+     * @param hasVisual if project has visual
+     * @param hasLogo if project has logo
+     * @param hasCurrent if project has current
+     * @param description description of project
+     * @param projTitle title of project
+     * @param socialMedia social media of project
+     * @param outline outline of project
+     * @param objective objective of project
+     * @param features list of features
+     * @param budget budget
+     */
     public Briefing(String clName, String clPhone, String clEmail, String examples, int numPages, boolean hasVisual, boolean hasLogo, boolean hasCurrent, String description, String projTitle, String socialMedia, String outline, String objective, List<String> features, Budget budget) {
         this.clName = clName;
         this.clPhone = clPhone;

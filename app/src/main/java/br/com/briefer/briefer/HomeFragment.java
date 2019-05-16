@@ -2,6 +2,7 @@ package br.com.briefer.briefer;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,8 +33,12 @@ public class HomeFragment extends Fragment {
         loadList();
 
         listBriefings.setOnItemClickListener((parent, view1, position, id) ->{
-            //TODO briefing intent
-            Toast.makeText(context, "Visualizando Briefing...", Toast.LENGTH_SHORT).show();
+            Briefing briefingSelected = (Briefing) listBriefings.getItemAtPosition(position);
+
+            Intent briefingIntent = new Intent(context, BriefingActivity.class);
+            briefingIntent.putExtra("briefingSelected", briefingSelected);
+            startActivity(briefingIntent);
+
         });
 
         return view;
@@ -43,13 +48,33 @@ public class HomeFragment extends Fragment {
         //TODO connect to webservice using Retrofit
         List<Briefing> briefings = new ArrayList<Briefing>();
 
-        Briefing staticBriefing = new Briefing();
-        staticBriefing.setProjTitle("A static briefing");
-        staticBriefing.setDescription("This is a static briefing just for test of the interface, this will be replaced soon by the dynamic briefings comming from the Retrofit and webservice!");
 
         Budget budget = new Budget();
         budget.setCost(2000);
         budget.setTime_goal(new Date());
+
+        List<String> features = new ArrayList<>();
+        features.add("Design bonito");
+        features.add("Otimização");
+        features.add("Sistema legal");
+
+        Briefing staticBriefing = new Briefing(
+                "Teste",
+                "(21)9999999",
+                "teste@teste.com",
+                "Facebook",
+                15,
+                false,
+                true,
+                false,
+                "a project test for only tests uses",
+                "Test Briefing",
+                "no have",
+                "I don't know what write here",
+                "make the world a better place",
+                features,
+                budget
+                );
 
         staticBriefing.setBudget(budget);
         briefings.add(staticBriefing);
