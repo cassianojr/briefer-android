@@ -1,8 +1,9 @@
 package br.com.briefer.briefer.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Budget {
+public class Budget implements Serializable {
     private Date time_goal;
     private double cost;
 

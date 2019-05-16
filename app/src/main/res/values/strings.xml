@@ -49,4 +49,19 @@
     <string name="label_action_logou">Sair</string>
     <string name="label_action_edit_profile">Editar Perfil</string>
     <string name="label_my_profile">Meu Perfil</string>
+    <string name="title_activity_teste">TesteActivity</string>
+    <string name="briefing_cl_name">Cliente:</string>
+    <string name="briefing_cl_phone">Telefone do Cliente:</string>
+    <string name="briefing_cl_email">Email do Cliente:</string>
+    <string name="briefing_examples">Sites/apps de exemplo:</string>
+    <string name="briefing_num_pages">Numero de Páginas/Telas do projeto:</string>
+    <string name="briefing_social_media">Mídias Sociais do projeto:</string>
+    <string name="briefing_outline">Por que criar esse projeto?</string>
+    <string name="briefing_description">Descrição do projeto:</string>
+    <string name="briefing_has_visual">Possui identidade visual?</string>
+    <string name="briefing_has_logo">Possui identidade logo?</string>
+    <string name="briefing_has_current">Possui um site para fazer redesing/manutenção?</string>
+    <string name="briefing_features">Principais características do projeto:</string>
+    <string name="briefing_time_goal">Prazo final do projeto:</string>
+    <string name="briefing_cost">Custo do projeto:</string>
 </resources>

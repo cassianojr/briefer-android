@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BriefingActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       >
+
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_margin="10dp"
+           android:orientation="vertical">
+
+           <TextView
+               android:id="@+id/briefing_title"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:textSize="28sp"
+               android:textAlignment="center"
+               android:text=""
+               android:textColor="@color/colorPrimaryDark"/>
+           <View
+               android:layout_width="fill_parent"
+               android:layout_height="2dp"
+               android:background="#c0c0c0"/>
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:layout_marginTop="10dp">
+
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/briefing_cl_name"
+                   android:textSize="20sp"
+                   android:textColor="@color/colorPrimaryDark"/>
+
+
+               <TextView
+                   android:id="@+id/briefing_cl_name"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text=""
+                   android:textSize="20sp"/>
+           </LinearLayout>
+
+           <View
+               android:layout_width="fill_parent"
+               android:layout_height="2dp"
+               android:background="#c0c0c0"/>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:layout_marginTop="10dp">
+
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/briefing_cl_phone"
+                   android:textSize="20sp"
+                   android:textColor="@color/colorPrimaryDark"/>
+
+
+               <TextView
+                   android:id="@+id/briefing_cl_phone"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text=""
+                   android:textSize="20sp"/>
+           </LinearLayout>
+           <View
+               android:layout_width="fill_parent"
+               android:layout_height="2dp"
+               android:background="#c0c0c0"/>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:layout_marginTop="10dp">
+
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/briefing_cl_email"
+                   android:textSize="20sp"
+                   android:textColor="@color/colorPrimaryDark"/>
+
+
+               <TextView
+                   android:id="@+id/briefing_cl_email"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text=""
+                   android:textSize="20sp"/>
+           </LinearLayout>
+
+           <View
+               android:layout_width="fill_parent"
+               android:layout_height="2dp"
+               android:background="#c0c0c0"/>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:layout_marginTop="10dp">
+
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/briefing_examples"
+                   android:textSize="20sp"
+                   android:textColor="@color/colorPrimaryDark"/>
+
+
+               <TextView
+                   android:id="@+id/briefing_examples"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text=""
+                   android:textSize="20sp"/>
+           </LinearLayout>
+
+           <View
+               android:layout_width="fill_parent"
+               android:layout_height="2dp"
+               android:background="#c0c0c0"/>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:layout_marginTop="10dp">
+
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/briefing_num_pages"
+                   android:textSize="20sp"
+                   android:textColor="@color/colorPrimaryDark"/>
+
+
+               <TextView
+                   android:id="@+id/briefing_num_pages"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text=""
+                   android:textSize="20sp"/>
+           </LinearLayout>
+
+           <View
+               android:layout_width="fill_parent"
+               android:layout_height="2dp"
+               android:background="#c0c0c0"/>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:layout_marginTop="10dp">
+
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/briefing_social_media"
+                   android:textSize="20sp"
+                   android:textColor="@color/colorPrimaryDark"/>
+
+
+               <TextView
+                   android:id="@+id/briefing_social_media"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text=""
+                   android:textSize="20sp"/>
+           </LinearLayout>
+
+           <View
+               android:layout_width="fill_parent"
+               android:layout_height="2dp"
+               android:background="#c0c0c0"/>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:layout_marginTop="10dp">
+
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/briefing_outline"
+                   android:textSize="20sp"
+                   android:textColor="@color/colorPrimaryDark"/>
+
+
+               <TextView
+                   android:id="@+id/briefing_outline"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text=""
+                   android:textSize="20sp"/>
+           </LinearLayout>
+
+           <View
+               android:layout_width="fill_parent"
+               android:layout_height="2dp"
+               android:background="#c0c0c0"/>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:layout_marginTop="10dp">
+
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/briefing_description"
+                   android:textSize="20sp"
+                   android:textColor="@color/colorPrimaryDark"/>
+
+
+               <TextView
+                   android:id="@+id/briefing_description"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text=""
+                   android:textSize="20sp"/>
+           </LinearLayout>
+
+           <View
+               android:layout_width="fill_parent"
+               android:layout_height="2dp"
+               android:background="#c0c0c0"/>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:layout_marginTop="10dp">
+
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/briefing_has_visual"
+                   android:textSize="20sp"
+                   android:textColor="@color/colorPrimaryDark"/>
+
+
+               <TextView
+                   android:id="@+id/briefing_has_visual"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text=""
+                   android:textSize="20sp"/>
+           </LinearLayout>
+
+           <View
+               android:layout_width="fill_parent"
+               android:layout_height="2dp"
+               android:background="#c0c0c0"/>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:layout_marginTop="10dp">
+
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/briefing_has_logo"
+                   android:textSize="20sp"
+                   android:textColor="@color/colorPrimaryDark"/>
+
+
+               <TextView
+                   android:id="@+id/briefing_has_logo"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text=""
+                   android:textSize="20sp"/>
+           </LinearLayout>
+
+           <View
+               android:layout_width="fill_parent"
+               android:layout_height="2dp"
+               android:background="#c0c0c0"/>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:layout_marginTop="10dp">
+
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/briefing_has_current"
+                   android:textSize="20sp"
+                   android:textColor="@color/colorPrimaryDark"/>
+
+
+               <TextView
+                   android:id="@+id/briefing_has_current"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text=""
+                   android:textSize="20sp"/>
+           </LinearLayout>
+
+           <View
+               android:layout_width="fill_parent"
+               android:layout_height="2dp"
+               android:background="#c0c0c0"/>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:layout_marginTop="10dp"
+               android:layout_marginBottom="28dp">
+
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/briefing_features"
+                   android:textSize="20sp"
+                   android:textColor="@color/colorPrimaryDark"
+                   />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/briefing_features"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </com.google.android.material.chip.ChipGroup>
+           </LinearLayout>
+
+           <View
+               android:layout_width="fill_parent"
+               android:layout_height="2dp"
+               android:background="#c0c0c0"/>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:layout_marginTop="10dp">
+
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/briefing_time_goal"
+                   android:textSize="20sp"
+                   android:textColor="@color/colorPrimaryDark"/>
+
+
+               <TextView
+                   android:id="@+id/briefing_time_goal"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text=""
+                   android:textSize="20sp"/>
+           </LinearLayout>
+
+           <View
+               android:layout_width="fill_parent"
+               android:layout_height="2dp"
+               android:background="#c0c0c0"/>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:layout_marginTop="10dp"
+               android:layout_marginBottom="28dp">
+
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/briefing_cost"
+                   android:textSize="20sp"
+                   android:textColor="@color/colorPrimaryDark"/>
+
+
+               <TextView
+                   android:id="@+id/briefing_cost"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text=""
+                   android:textSize="20sp"/>
+           </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:orientation="vertical"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/briefing_button_remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        app:srcCompat="@drawable/ic_remove"
+        tools:ignore="UnusedAttribute" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/briefing_button_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        app:srcCompat="@drawable/ic_edit"
+        tools:ignore="UnusedAttribute" />
+
+    </LinearLayout>
+
+</RelativeLayout>
