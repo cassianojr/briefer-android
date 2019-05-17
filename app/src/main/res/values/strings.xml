@@ -64,4 +64,6 @@
     <string name="briefing_features">Principais características do projeto:</string>
     <string name="briefing_time_goal">Prazo final do projeto:</string>
     <string name="briefing_cost">Custo do projeto:</string>
+    <string name="label_edit_profile">Editar Perfil</string>
+    <string name="label_edit_profile_save">Salvar</string>
 </resources>
