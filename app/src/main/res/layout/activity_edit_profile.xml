@@ -4,23 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".EditProfileActivity">
 
     <LinearLayout
         android:id="@+id/email_login_form"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        >
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="128dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="32dp"
             android:layout_gravity="center">
 
             <ImageView
@@ -35,57 +34,131 @@
             android:layout_height="wrap_content"
             android:text="@string/label_edit_profile"
             android:textSize="24sp"
+            android:textColor="@color/colorPrimaryDark"
             android:layout_gravity="center"/>
 
-        <EditText
-            android:id="@+id/sign_up_name"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/prompt_su_name"
-            android:inputType="textEmailAddress"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:autofillHints="@string/prompt_su_name"
-            tools:ignore="UnusedAttribute" />
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:text="@string/label_name"/>
+            <EditText
+                android:id="@+id/edit_profile_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_su_name"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:autofillHints="@string/prompt_su_name"
+                tools:ignore="UnusedAttribute"
+                android:textSize="20sp"/>
+        </LinearLayout>
 
-        <EditText
-            android:id="@+id/sign_up_email"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/prompt_email"
-            android:inputType="textEmailAddress"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:autofillHints="@string/prompt_email"
-            tools:ignore="UnusedAttribute" />
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:text="@string/label_email"/>
+            <EditText
+                android:id="@+id/edit_profile_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_email"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:autofillHints="@string/prompt_email"
+                tools:ignore="UnusedAttribute"
+                android:textSize="20sp"/>
+        </LinearLayout>
 
-        <EditText
-            android:id="@+id/sign_up_password"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/prompt_password"
-            android:imeActionId="6"
-            android:imeOptions="actionUnspecified"
-            android:inputType="textPassword"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:autofillHints="@string/prompt_password"
-            tools:ignore="UnusedAttribute" />
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:text="@string/label_old_password"/>
+            <EditText
+                android:id="@+id/edit_profile_old_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_old_password"
+                android:imeActionId="6"
+                android:imeOptions="actionUnspecified"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:autofillHints="@string/prompt_old_password"
+                tools:ignore="UnusedAttribute"
+                android:textSize="20sp"/>
+        </LinearLayout>
 
-        <EditText
-            android:id="@+id/sign_up_confirm_password"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/prompt_confirm_password"
-            android:imeActionId="6"
-            android:imeActionLabel="@string/action_sign_in_short"
-            android:imeOptions="actionUnspecified"
-            android:inputType="textPassword"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:autofillHints="@string/prompt_confirm_password"
-            tools:ignore="UnusedAttribute" />
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:text="@string/label_password"/>
+            <EditText
+                android:id="@+id/edit_profile_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_password"
+                android:imeActionId="6"
+                android:imeOptions="actionUnspecified"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:autofillHints="@string/prompt_password"
+                tools:ignore="UnusedAttribute"
+                android:textSize="20sp"/>
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:text="@string/label_confirm_password"/>
+
+            <EditText
+                android:id="@+id/edit_profile_confirm_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_confirm_password"
+                android:imeActionId="6"
+                android:imeActionLabel="@string/action_sign_in_short"
+                android:imeOptions="actionUnspecified"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:autofillHints="@string/prompt_confirm_password"
+                tools:ignore="UnusedAttribute"
+                android:textSize="20sp"/>
+        </LinearLayout>
         <Button
             android:id="@+id/edit_profile_action_button"
             style="?android:textAppearanceSmall"

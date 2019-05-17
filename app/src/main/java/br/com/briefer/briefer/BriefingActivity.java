@@ -52,8 +52,8 @@ public class BriefingActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == 1){
-            if(resultCode == RESULT_OK){
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
                 assert data != null;
                 briefing = (Briefing) data.getSerializableExtra("briefingEdit");
                 setFields();
@@ -102,7 +102,7 @@ public class BriefingActivity extends AppCompatActivity {
 
         ChipGroup briefingFeatures = findViewById(R.id.briefing_features);
         briefingFeatures.removeAllViews();
-        for(String feature :briefing.getFeatures()){
+        for (String feature : briefing.getFeatures()) {
             Chip featureChip = getChip(feature);
             briefingFeatures.addView(featureChip);
         }
@@ -114,10 +114,10 @@ public class BriefingActivity extends AppCompatActivity {
 
         TextView mCost = findViewById(R.id.briefing_cost);
         mCost.setText(String.valueOf(budget.getCost()));
-        
+
     }
 
-    private Chip getChip(String text){
+    private Chip getChip(String text) {
         final Chip chip = new Chip(this);
 
         chip.setChipDrawable(ChipDrawable.createFromResource(this, R.xml.action_chip));
