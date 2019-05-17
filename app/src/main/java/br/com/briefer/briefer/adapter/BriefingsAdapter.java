@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Locale;
 
 import br.com.briefer.briefer.R;
 import br.com.briefer.briefer.model.Briefing;
@@ -49,12 +50,18 @@ public class BriefingsAdapter extends BaseAdapter{
             view = inflater.inflate(R.layout.list_briefings, parent, false);
         }
 
+        TextView mClName = view.findViewById(R.id.list_briefing_cl_name);
+        mClName.setText(briefing.getClName());
+
+        TextView mClPhone = view.findViewById(R.id.list_briefing_cl_phone);
+        mClPhone.setText(briefing.getClPhone());
+
         TextView mBriefingTitle = view.findViewById(R.id.list_briefing_title);
         mBriefingTitle.setText(briefing.getProjTitle());
 
         TextView mTimeGoal = view.findViewById(R.id.list_briefing_time_goal);
 
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
         String timeGoal = sdf.format(briefing.getBudget().getTime_goal());
         mTimeGoal.setText(timeGoal);
 

@@ -18,7 +18,7 @@
     </string>
     <string name="text_sign_up"><u>Cadastre-se</u></string>
     <string name="title_activity_signup">Cadastre-se</string>
-    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_activity_menu">Briefer</string>
     <string name="title_home">Home</string>
     <string name="title_new_briefing">Novo Briefing</string>
     <string name="title_profile">Perfil</string>
@@ -68,4 +68,30 @@
     <string name="label_edit_profile_save">Salvar</string>
     <string name="label_edit_briefing">Editar Briefing</string>
     <string name="action_edit_briefing">Salvar</string>
+    <string name="label_proj_title">Titulo do Projeto:</string>
+    <string name="label_cl_name">Nome do Cliente:</string>
+    <string name="label_cl_phone">Telefone do Cleinte:</string>
+    <string name="label_cl_email">Email do Cliente:</string>
+    <string name="label_examples">Sites/Apps de exemplo:</string>
+    <string name="label_num_pages">Número de Páginas/Telas do projeto:</string>
+    <string name="label_social_media">Mídias Sociais do Projeto:</string>
+    <string name="label_outline">Por que criar esse projeto? Quais são as suas necessidades?:</string>
+    <string name="label_objective">Qual o objetivo do projeto?</string>
+    <string name="label_description">Descreva o projeto detalhadamente:</string>
+    <string name="label_features">Quais são as características do projeto?</string>
+    <string name="label_time_goal">Qual o prazo final para o projeto?</string>
+    <string name="label_cost">Custo:</string>
+    <string name="label_name">Nome:</string>
+    <string name="label_email">Email:</string>
+    <string name="label_password">Senha (opcional):</string>
+    <string name="label_confirm_password">Confirmar Senha (opicional):</string>
+    <string name="label_old_password">Senha antiga(opcional)</string>
+    <string name="prompt_old_password">Senha antiga</string>
+    <string name="label_su_confirm_password">Confirmar Senha:</string>
+    <string name="label_su_password">Senha:</string>
+    <string name="list_briefing_cl_phone">Telefone:</string>
+    <string name="list_briefing_cl_name">Cliente:</string>
+    <string name="list_briefing_time_goal">Prazo:</string>
+    <string name="list_briefing_cost">Custo:</string>
+    <string name="list_briefing_description">Descrição:</string>
 </resources>
