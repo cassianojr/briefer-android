@@ -16,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait"
@@ -46,6 +47,13 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".BriefingActivity"
+            android:theme="@style/AppTheme.TransparentActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuActivity" />
+        </activity>
+
+        <activity android:name=".EditProfileActivity"
             android:theme="@style/AppTheme.TransparentActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

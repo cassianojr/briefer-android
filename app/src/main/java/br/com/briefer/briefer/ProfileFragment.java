@@ -30,6 +30,12 @@ public class ProfileFragment extends Fragment {
 
         });
 
+        Button btnEditProfile = view.findViewById(R.id.edit_profile_button);
+        btnEditProfile.setOnClickListener(v -> {
+            Intent editProfileIntent = new Intent(context, EditProfileActivity.class);
+            startActivity(editProfileIntent);
+        });
+
         return view;
     }
 

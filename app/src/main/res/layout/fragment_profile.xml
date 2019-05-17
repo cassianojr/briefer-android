@@ -94,6 +94,7 @@
             android:background="#c0c0c0"/>
 
         <Button
+            android:id="@+id/edit_profile_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/label_action_edit_profile"
