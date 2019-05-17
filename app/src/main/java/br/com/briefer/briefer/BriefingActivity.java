@@ -1,5 +1,6 @@
 package br.com.briefer.briefer;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -29,14 +30,14 @@ public class BriefingActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         briefing = (Briefing) intent.getSerializableExtra("briefingSelected");
-        setTitle(briefing.getProjTitle());
 
         setFields();
 
         FloatingActionButton btnEdit = findViewById(R.id.briefing_button_edit);
         btnEdit.setOnClickListener(v -> {
-            //TODO make edit briefing activity
-            Toast.makeText(BriefingActivity.this, "Editando Briefing...", Toast.LENGTH_SHORT).show();
+            Intent editBriefingIntent = new Intent(this, EditBriefingActivity.class);
+            editBriefingIntent.putExtra("briefingToEdit", briefing);
+            startActivityForResult(editBriefingIntent, 1);
         });
 
         FloatingActionButton btnDelete = findViewById(R.id.briefing_button_remove);
@@ -47,7 +48,22 @@ public class BriefingActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == 1){
+            if(resultCode == RESULT_OK){
+                assert data != null;
+                briefing = (Briefing) data.getSerializableExtra("briefingEdit");
+                setFields();
+            }
+        }
+    }
+
     private void setFields() {
+        setTitle(briefing.getProjTitle());
+
         TextView mProjTitle = findViewById(R.id.briefing_title);
         mProjTitle.setText(briefing.getProjTitle());
 
@@ -85,6 +101,7 @@ public class BriefingActivity extends AppCompatActivity {
         mHasCurrent.setText((briefing.isHasCurrent()) ? "Sim." : "Não");
 
         ChipGroup briefingFeatures = findViewById(R.id.briefing_features);
+        briefingFeatures.removeAllViews();
         for(String feature :briefing.getFeatures()){
             Chip featureChip = getChip(feature);
             briefingFeatures.addView(featureChip);
