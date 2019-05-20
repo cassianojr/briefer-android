@@ -1,20 +1,26 @@
 package br.com.briefer.briefer.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+public class JWTPayload {
 
-@JsonIgnoreProperties({"_id"})
-public class User {
-    private int id;
+    private String id;
+    private String token;
     private String name;
     private String email;
-    private String password;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     public String getName() {
@@ -31,13 +37,5 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }
