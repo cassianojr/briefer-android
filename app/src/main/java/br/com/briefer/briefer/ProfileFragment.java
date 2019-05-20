@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import br.com.briefer.briefer.util.PreferencesUtility;
+
 
 public class ProfileFragment extends Fragment {
 
@@ -23,7 +25,7 @@ public class ProfileFragment extends Fragment {
 
         Button btnLogout = view.findViewById(R.id.logout_button);
         btnLogout.setOnClickListener(v -> {
-            //TODO add logout here
+            PreferencesUtility.setLoggedIn(context, false, "");
 
             Intent logoutIntent = new Intent(context, LoginActivity.class);
             startActivity(logoutIntent);
