@@ -1,5 +1,6 @@
 package br.com.briefer.briefer.config;
 
+import br.com.briefer.briefer.services.BriefingService;
 import br.com.briefer.briefer.services.UserService;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
@@ -14,10 +15,13 @@ public class RetrofitConfig {
                 baseUrl(BASE_URL)
                 .addConverterFactory(JacksonConverterFactory.create())
                 .build();
-
     }
 
     public UserService getUserService(){
         return this.retrofit.create(UserService.class);
+    }
+
+    public BriefingService getBriefingService(){
+        return this.retrofit.create(BriefingService.class);
     }
 }
