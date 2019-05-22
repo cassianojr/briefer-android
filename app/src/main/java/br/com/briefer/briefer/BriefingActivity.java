@@ -1,10 +1,12 @@
 package br.com.briefer.briefer;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,8 +18,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
+import br.com.briefer.briefer.config.RetrofitConfig;
 import br.com.briefer.briefer.model.Briefing;
 import br.com.briefer.briefer.model.Budget;
+import br.com.briefer.briefer.util.PreferencesUtility;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class BriefingActivity extends AppCompatActivity {
 
@@ -32,20 +39,44 @@ public class BriefingActivity extends AppCompatActivity {
         briefing = (Briefing) intent.getSerializableExtra("briefingSelected");
 
         setFields();
+        handleEdit();
+        handleDelete();
+    }
 
+    private void handleEdit() {
         FloatingActionButton btnEdit = findViewById(R.id.briefing_button_edit);
         btnEdit.setOnClickListener(v -> {
             Intent editBriefingIntent = new Intent(this, EditBriefingActivity.class);
             editBriefingIntent.putExtra("briefingToEdit", briefing);
             startActivityForResult(editBriefingIntent, 1);
         });
+    }
 
+    private void handleDelete() {
         FloatingActionButton btnDelete = findViewById(R.id.briefing_button_remove);
         btnDelete.setOnClickListener(v -> {
-            //TODO make delete action
-            Toast.makeText(BriefingActivity.this, "Deletando briefing...", Toast.LENGTH_SHORT).show();
-        });
+            String jwtToken = "Bearer "+PreferencesUtility.getUserToken(this);
+            Call<Briefing> deleteBriefing = new RetrofitConfig().getBriefingService().deleteBriefing(briefing, jwtToken);
+            deleteBriefing.enqueue(new Callback<Briefing>() {
+                @Override
+                public void onResponse(@NonNull Call<Briefing> call,@NonNull Response<Briefing> response) {
+                    if(response.code() == 204){
+                        Toast.makeText(BriefingActivity.this, "Deletando briefing...", Toast.LENGTH_SHORT).show();
 
+                        //Start menu activity
+                        Intent menuIntent = new Intent(BriefingActivity.this, MenuActivity.class);
+                        startActivity(menuIntent);
+                        finish();
+                    }
+                }
+
+                @Override
+                public void onFailure(@NonNull Call<Briefing> call, @NonNull Throwable t) {
+                    Toast.makeText(BriefingActivity.this, "Erro ao deletar briefing. Tente novamente mais tarde.", Toast.LENGTH_SHORT).show();
+                    Log.e("BriefingService", t.getMessage());
+                }
+            });
+        });
     }
 
     @Override
