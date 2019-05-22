@@ -2,49 +2,33 @@ package br.com.briefer.briefer.model;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
 import java.io.Serializable;
 import java.util.List;
 
 @JsonIgnoreProperties("__v")
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Briefing implements Serializable {
 
     @JsonAlias({"_id", "id"})
     private String id;
-
-    @JsonAlias({"cl_name", "clName"})
     private String clName;
-
-    @JsonAlias({"cl_phone", "clPhone"})
     private String clPhone;
-
-    @JsonAlias({"cl_email", "clEmail"})
     private String clEmail;
-
     private String examples;
-
-    @JsonAlias({"num_pages", "numPages"})
     private int numPages;
-
-    @JsonAlias({"has_visual", "hasVisual"})
     private boolean hasVisual;
-
-    @JsonAlias({"has_logo", "hasLogo"})
     private boolean hasLogo;
-
-    @JsonAlias({"has_current", "hasCurrent"})
     private boolean hasCurrent;
-
     private String description;
-
-    @JsonAlias({"proj_title", "projTitle"})
     private String projTitle;
-
-    @JsonAlias({"social_media", "socialMedia"})
     private String socialMedia;
     private String outline;
     private String objective;
 
+    @JsonAlias({"created_by", "createdBy"})
     private String createdBy;
 
     private List<String> features;
@@ -71,7 +55,7 @@ public class Briefing implements Serializable {
      * @param features list of features
      * @param budget budget
      */
-    public Briefing(String clName, String clPhone, String clEmail, String examples, int numPages, boolean hasVisual, boolean hasLogo, boolean hasCurrent, String description, String projTitle, String socialMedia, String outline, String objective, List<String> features, Budget budget) {
+    public Briefing(String clName, String clPhone, String clEmail, String examples, int numPages, boolean hasVisual, boolean hasLogo, boolean hasCurrent, String description, String projTitle, String socialMedia, String outline, String objective, List<String> features, Budget budget, String createdBy) {
         this.clName = clName;
         this.clPhone = clPhone;
         this.clEmail = clEmail;
@@ -87,6 +71,7 @@ public class Briefing implements Serializable {
         this.objective = objective;
         this.features = features;
         this.budget = budget;
+        this.createdBy = createdBy;
     }
 
     public String getCreatedBy() {
