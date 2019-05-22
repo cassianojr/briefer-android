@@ -75,77 +75,21 @@ public class NewBriefingFragment extends Fragment {
 
         setFields(view);
 
-        calendar = Calendar.getInstance();
+        handleDatePicker(view);
+        handleFeatureTags(view);
+        handleSubmit(view);
 
-        mTimeGoal = view.findViewById(R.id.new_briefing_time_goal);
-        DatePickerDialog.OnDateSetListener date = (view1, year, monthOfYear, dayOfMonth) -> {
+        return view;
+    }
 
-            calendar.set(Calendar.YEAR, year);
-            calendar.set(Calendar.MONTH, monthOfYear);
-            calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-
-            //update date picker
-            mTimeGoal.setText(sdf.format(calendar.getTime()));
-
-        };
-
-        mTimeGoal.setOnClickListener(view12 -> new DatePickerDialog(
-                context,
-                date,
-                calendar.get(Calendar.YEAR),
-                calendar.get(Calendar.MONTH),
-                calendar.get(Calendar.DAY_OF_MONTH)
-        ).show());
-        ChipGroup entryChipGroup = view.findViewById(R.id.new_briefing_tag_features);
-
-        mFeatures = view.findViewById(R.id.new_briefing_features);
-        mFeatures.setOnKeyListener((v, keyCode, event) -> {
-            if(keyCode == KeyEvent.KEYCODE_COMMA || keyCode == KeyEvent.KEYCODE_ENTER){
-                 String text = mFeatures.getText().toString().replaceAll(",","");
-                 if(!text.equals("")){
-                     Chip entryChip = getChip(entryChipGroup, text);
-                     entryChipGroup.addView(entryChip);
-                     features.add(text);
-                 }
-
-                 mFeatures.setText("");
-            }
-            return false;
-        });
-
+    private void handleSubmit(View view) {
         Button newBriefingButton = view.findViewById(R.id.new_briefing_button);
         newBriefingButton.setOnClickListener(v -> {
             if(verifyFields()){
                 return;
             }
-            //get the data
-            String projTitle = mProjTitle.getText().toString();
-            String clName = mClName.getText().toString();
-            String clPhone =  mClPhone.getText().toString();
-            String clEmail =  mClemail.getText().toString();
-            String examples = mExamples.getText().toString();
-            int numPages = Integer.parseInt(mNumPages.getText().toString());
-            String socialMedia = mSocialMedia.getText().toString();
-            String outline =  mOutline.getText().toString();
-            String objective = mObjective.getText().toString();
-            String description =  mDescription.getText().toString();
-            double cost = Double.parseDouble(mCost.getText().toString());
-            boolean hasVisual = mHasVisual.isSelected();
-            boolean hasLogo = mHasLogo.isSelected();
-            boolean hasCurrent = mHasCurrent.isSelected();
-            String timeGoal = mTimeGoal.getText().toString();
 
-            //set budget
-            Budget budget = new Budget();
-            budget.setCost(cost);
-            try {
-                budget.setTime_goal(sdf.parse(timeGoal));
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-
-            String createdBy = PreferencesUtility.getUserId(context);
-            Briefing briefing = new Briefing(clName, clPhone, clEmail, examples, numPages, hasVisual, hasLogo, hasCurrent, description, projTitle, socialMedia, outline, objective, features, budget, createdBy);
+            Briefing briefing = createBriefing();
             String jwtToken = "Bearer "+PreferencesUtility.getUserToken(context);
 
             Call<Briefing> postBriefing = new RetrofitConfig().getBriefingService().postBriefing(briefing, jwtToken);
@@ -180,7 +124,80 @@ public class NewBriefingFragment extends Fragment {
             });
 
         });
-        return view;
+    }
+
+    private Briefing createBriefing() {
+        //get the data
+        String projTitle = mProjTitle.getText().toString();
+        String clName = mClName.getText().toString();
+        String clPhone =  mClPhone.getText().toString();
+        String clEmail =  mClemail.getText().toString();
+        String examples = mExamples.getText().toString();
+        int numPages = Integer.parseInt(mNumPages.getText().toString());
+        String socialMedia = mSocialMedia.getText().toString();
+        String outline =  mOutline.getText().toString();
+        String objective = mObjective.getText().toString();
+        String description =  mDescription.getText().toString();
+        double cost = Double.parseDouble(mCost.getText().toString());
+        boolean hasVisual = mHasVisual.isSelected();
+        boolean hasLogo = mHasLogo.isSelected();
+        boolean hasCurrent = mHasCurrent.isSelected();
+        String timeGoal = mTimeGoal.getText().toString();
+
+        //set budget
+        Budget budget = new Budget();
+        budget.setCost(cost);
+        try {
+            budget.setTime_goal(sdf.parse(timeGoal));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        String createdBy = PreferencesUtility.getUserId(context);
+        return new Briefing(clName, clPhone, clEmail, examples, numPages, hasVisual, hasLogo, hasCurrent, description, projTitle, socialMedia, outline, objective, features, budget, createdBy);
+    }
+
+    private void handleFeatureTags(View view) {
+        ChipGroup entryChipGroup = view.findViewById(R.id.new_briefing_tag_features);
+
+        mFeatures = view.findViewById(R.id.new_briefing_features);
+        mFeatures.setOnKeyListener((v, keyCode, event) -> {
+            if(keyCode == KeyEvent.KEYCODE_COMMA || keyCode == KeyEvent.KEYCODE_ENTER){
+                 String text = mFeatures.getText().toString().replaceAll(",","");
+                 if(!text.equals("")){
+                     Chip entryChip = getChip(entryChipGroup, text);
+                     entryChipGroup.addView(entryChip);
+                     features.add(text);
+                 }
+
+                 mFeatures.setText("");
+            }
+            return false;
+        });
+    }
+
+    private void handleDatePicker(View view) {
+        calendar = Calendar.getInstance();
+
+        mTimeGoal = view.findViewById(R.id.new_briefing_time_goal);
+        DatePickerDialog.OnDateSetListener date = (view1, year, monthOfYear, dayOfMonth) -> {
+
+            calendar.set(Calendar.YEAR, year);
+            calendar.set(Calendar.MONTH, monthOfYear);
+            calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+            //update date picker
+            mTimeGoal.setText(sdf.format(calendar.getTime()));
+
+        };
+
+        mTimeGoal.setOnClickListener(view12 -> new DatePickerDialog(
+                context,
+                date,
+                calendar.get(Calendar.YEAR),
+                calendar.get(Calendar.MONTH),
+                calendar.get(Calendar.DAY_OF_MONTH)
+        ).show());
     }
 
     private boolean verifyFields() {
