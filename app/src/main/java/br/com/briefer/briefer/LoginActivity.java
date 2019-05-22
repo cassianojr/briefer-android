@@ -109,7 +109,7 @@ public class LoginActivity extends AppCompatActivity{
 
                 JWTPayload payload = response.body();
                 if(payload != null){
-                    PreferencesUtility.setLoggedIn(getApplicationContext(), true, payload.getToken());
+                    PreferencesUtility.setLoggedIn(getApplicationContext(), true, payload.getToken(), payload.getId());
                     Intent spashIntent = new Intent(LoginActivity.this, SplashActivity.class);
                     startActivity(spashIntent);
                     finish();

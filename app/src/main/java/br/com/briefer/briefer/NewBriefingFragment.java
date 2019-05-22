@@ -3,8 +3,11 @@ package br.com.briefer.briefer;
 
 import android.app.DatePickerDialog;
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,10 +18,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
+import androidx.annotation.NonNull;
+
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipDrawable;
 import com.google.android.material.chip.ChipGroup;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -26,8 +32,13 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
+import br.com.briefer.briefer.config.RetrofitConfig;
 import br.com.briefer.briefer.model.Briefing;
 import br.com.briefer.briefer.model.Budget;
+import br.com.briefer.briefer.util.PreferencesUtility;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class NewBriefingFragment extends Fragment {
@@ -133,10 +144,40 @@ public class NewBriefingFragment extends Fragment {
                 e.printStackTrace();
             }
 
-            //TODO connect this part on webservice
+            String createdBy = PreferencesUtility.getUserId(context);
+            Briefing briefing = new Briefing(clName, clPhone, clEmail, examples, numPages, hasVisual, hasLogo, hasCurrent, description, projTitle, socialMedia, outline, objective, features, budget, createdBy);
+            String jwtToken = "Bearer "+PreferencesUtility.getUserToken(context);
 
-            Briefing briefing = new Briefing(clName, clPhone, clEmail, examples, numPages, hasVisual, hasLogo, hasCurrent, description, projTitle, socialMedia, outline, objective, features, budget);
-            Toast.makeText(context, "Criando briefing: "+briefing.getProjTitle(), Toast.LENGTH_SHORT).show();
+            Call<Briefing> postBriefing = new RetrofitConfig().getBriefingService().postBriefing(briefing, jwtToken);
+            postBriefing.enqueue(new Callback<Briefing>() {
+                @Override
+                public void onResponse(@NonNull Call<Briefing> call, @NonNull Response<Briefing> response) {
+                    Log.i("BriefingService", String.valueOf(response.code()));
+
+                    try {
+                        if (response.errorBody() != null) {
+                            Log.e("BriefingService", response.errorBody().string());
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    Briefing res = response.body();
+                    if(res != null){
+                        //Transaction to home fragment
+                        HomeFragment homeFragment = new HomeFragment();
+                        FragmentManager manager = getFragmentManager();
+                        FragmentTransaction transaction = manager.beginTransaction();
+                        transaction.replace(R.id.content_frame, homeFragment);
+                        transaction.commit();
+                    }
+                }
+                @Override
+                public void onFailure(@NonNull Call<Briefing> call, @NonNull Throwable t) {
+                    Toast.makeText(context, "Falha ao criar novo briefing. Tente novamente mais tarde.", Toast.LENGTH_SHORT).show();
+                    Log.e("BriefingService", "Error on create new briefing: "+t);
+                }
+            });
 
         });
         return view;
