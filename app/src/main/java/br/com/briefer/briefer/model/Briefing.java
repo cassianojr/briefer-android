@@ -2,6 +2,7 @@ package br.com.briefer.briefer.model;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
@@ -12,7 +13,7 @@ import java.util.List;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Briefing implements Serializable {
 
-    @JsonAlias({"_id", "id"})
+    @JsonProperty("_id")
     private String id;
     private String clName;
     private String clPhone;
@@ -28,7 +29,7 @@ public class Briefing implements Serializable {
     private String outline;
     private String objective;
 
-    @JsonAlias({"created_by", "createdBy"})
+    @JsonProperty("createdBy")
     private String createdBy;
 
     private List<String> features;
