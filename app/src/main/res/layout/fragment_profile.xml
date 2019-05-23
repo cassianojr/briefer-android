@@ -60,12 +60,14 @@
                 android:orientation="horizontal"
                 >
                 <TextView
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/label_profile_name"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="24sp"/>
                 <TextView
+                    android:id="@+id/user_profile_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/label_profile_example"
@@ -82,6 +84,7 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="24sp"/>
                 <TextView
+                    android:id="@+id/user_profile_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/label_profile_email_example"

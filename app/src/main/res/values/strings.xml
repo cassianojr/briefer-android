@@ -84,7 +84,7 @@
     <string name="label_name">Nome:</string>
     <string name="label_email">Email:</string>
     <string name="label_password">Senha (opcional):</string>
-    <string name="label_confirm_password">Confirmar Senha (opicional):</string>
+    <string name="label_confirm_password">Confirmar Senha (opcional):</string>
     <string name="label_old_password">Senha antiga(opcional)</string>
     <string name="prompt_old_password">Senha antiga</string>
     <string name="label_su_confirm_password">Confirmar Senha:</string>
@@ -96,4 +96,6 @@
     <string name="list_briefing_description">Descrição:</string>
     <string name="description_briefer_logo">Briefer Logo</string>
     <string name="search_field">Pesquisar</string>
+    <string name="prompt_new_password">Senha Nova</string>
+    <string name="label_new_password">Senha nova: (opcional)</string>
 </resources>

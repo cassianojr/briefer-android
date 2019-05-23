@@ -1,19 +1,21 @@
 package br.com.briefer.briefer.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-@JsonIgnoreProperties({"_id"})
-public class User {
-    private int id;
+import java.io.Serializable;
+
+public class User implements Serializable {
+    @JsonProperty("_id")
+    private String id;
     private String name;
     private String email;
     private String password;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

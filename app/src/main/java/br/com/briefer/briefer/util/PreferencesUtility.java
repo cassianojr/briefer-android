@@ -7,22 +7,28 @@ import android.preference.PreferenceManager;
 public class PreferencesUtility {
     private static final String LOGGED_IN_PREF = "logged_in_status";
     private static final String USER_TOKEN_PREF = "user_token_pref";
-    private static final String USER_ID_PREF = "user_id_pre";
+    private static final String USER_ID_PREF = "user_id_pref";
+    private static final String USER_EMAIL_PREF = "user_email_pref";
 
     private static SharedPreferences getPreferences(Context context){
         return PreferenceManager.getDefaultSharedPreferences(context);
     }
 
-    public static void setLoggedIn(Context context, boolean loggedIn, String token, String userId){
+    public static void setLoggedIn(Context context, boolean loggedIn, String token, String userId, String email){
         SharedPreferences.Editor editor = getPreferences(context).edit();
         editor.putBoolean(LOGGED_IN_PREF, loggedIn);
         editor.putString(USER_TOKEN_PREF, token);
         editor.putString(USER_ID_PREF, userId);
+        editor.putString(USER_EMAIL_PREF, email);
         editor.apply();
     }
 
     public static boolean getLoggedStatus(Context context){
         return getPreferences(context).getBoolean(LOGGED_IN_PREF, false);
+    }
+
+    public static String getUserEmail(Context context){
+        return getPreferences(context).getString(USER_EMAIL_PREF, "");
     }
 
     public static String getUserId(Context context) {
