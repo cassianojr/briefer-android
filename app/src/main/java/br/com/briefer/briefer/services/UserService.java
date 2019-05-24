@@ -21,4 +21,7 @@ public interface UserService {
 
     @PUT("users/update")
     Call<User> putUser(@Body UserUpdate user, @Header("Authorization") String jwtToken);
+
+    @POST("users")
+    Call<User> postUser(@Body User user);
 }
